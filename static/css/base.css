@@ -1,0 +1,166 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333; /* Цвет фона */
+
+    background-image: url('../images/normal_photos/computers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Масштабирование фонового изображения */
+    background-attachment: fixed; /* Фиксация фонового изображения */
+    background-position: center; /* Центрирование фонового изображения */
+    min-height: 100vh; /* Минимальная высота для body */
+
+}
+
+.container {
+    width: 85%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    color: #00adb5;
+    margin-bottom: 20px;
+    font-size: 75px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-item {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    font-size: 1.2em;
+}
+
+.details-item b {
+    color: #00adb5;
+}
+
+.worker-list {
+    list-style: decimal inside;
+    margin-top: 10px;
+}
+
+.worker-item {
+    padding: 5px 0;
+}
+
+.worker-item::marker {
+    color: #00adb5;
+}
+
+.equipment-list {
+    list-style: decimal inside;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    background-color: #252525;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    background-color: #252525;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 85px;
+    margin-right: 85px;
+    border-radius: 25px;
+}
+.equipment-details {
+    display: flex;
+    align-items: center;
+}
+
+.equipment-title {
+    font-weight: bold;
+    margin-right: 15px;
+    color: #00adb5;
+}
+
+.equipment-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.equipment-price {
+    background-color: #00adb5;
+    color: #121212;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.th {
+    color: #00adb5; /* Цвет текста заголовков */
+}
+
+.td {
+    color: #ffffff; /* Цвет текста в ячейках таблицы */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #252525;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #00adb5;
+    border: none;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #007b8f;
+    color: #ffffff;
+}
+
+.alert-primary {
+    background-color: #1e1e1e;
+    color: #00adb5;
+    border: 1px solid #00adb5;
+}

@@ -1,0 +1,54 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}{{ post_office.title }}{% endblock title %}
+{% block content %}
+<body>
+<div class="container">
+        <h1 class="title">{{ post_office.title }}</h1>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <table class="table details-table">
+                    <tbody>
+                        <tr>
+                            <th class="th">Название:</th>
+                            <td class="td"><b>{{ post_office.title }}</b></td>
+                            <th class="th">Стоимость всего оборудования:</th>
+                            <td class="td"><b>{{ sum_equipments }}₽</b></td>
+                            <th class="th">Индекс:</th>
+                            <td class="td"><b>{{ post_office.index }}</b></td>
+                        </tr>
+                        <tr>
+                            <th class="th">Количество оборудования:</th>
+                            <td class="td"><b>{{ count_equipments }}</b></td>
+                            <th class="th">Работники:</th>
+                            <td colspan="3" class="td">
+                                <ol class="worker-list">
+                                    {% for worker in post_office.worker.all %}
+                                        <li class="worker-item">{{ worker }}</li>
+                                    {% endfor %}
+                                </ol>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2 class="my-4">Оборудование</h2>
+        <ol class="equipment-list">
+            {% for equipment in post_office.equipments.all %}
+                <a href="{{ equipment.get_absolute_url }}">
+                    <li class="equipment-item">
+                    <div class="equipment-details">
+                        <div class="equipment-title">{{ equipment.title }}</div>
+                        <img src="{{ equipment.photo.url }}" alt="{{ equipment.title }}" class="equipment-image">
+                    </div>
+                    <span class="equipment-price">{{ equipment.price }}₽</span>
+                    </li>
+                </a>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+{% endblock %}

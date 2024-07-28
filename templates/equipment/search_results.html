@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}ПОИСК{% endblock title %}
+
+{% block content %}
+  <ol class="equipment-list">
+    {% for equipment in equipment_list %}
+        <li class="equipment-item">
+            <p>
+                Название: <a href="{{ equipment.get_absolute_url }}">{{ equipment.title }}
+                <img src="{{ equipment.photo.url }}"  alt="{{equipment.title}}" height="50" width="50">
+                </a><br>
+                <b>Инвертарный:</b> {{equipment.inventory_number }}
+                <b>Серийный:</b> {{equipment.serial_number }}
+                <b>Расположение:</b> {{equipment.department }}
+                 <b>Статус:</b> {{ equipment.get_status_display }}
+            </p>
+        </li>
+    {% endfor %}
+  </ol>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% block title %}{{ equipment.title }}{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="border-right: 2px solid #333;">
+            <div class="book-detail">
+                <h2><b>Название:</b> {{ equipment.title }}</h2>
+                <img src="{{equipment.photo.url}}" alt="{{equipment.title }}" style="max-width: 100%; height: auto;" >
+                <p><b>Производитель:</b> {{ equipment.manufacturer }}</p>
+                <p><b>Инвертарный номер:</b> {{ equipment.inventory_number }}</p>
+                <p><b>Серийный номер: </b> {{ equipment.serial_number }}</p>
+                <p><b>Время обновления: </b>{{ equipment.updated }}</p>
+                <p><b>Расположение: </b>{{ equipment.department }}</p>
+                <p><b>Ценна: </b>{{ equipment.price}}</p>
+                <p><b>Статус: </b>{{ equipment.get_status_display }}</p>
+                <form method="get">
+                    <input type="hidden" name="button_pressed" value="{{ equipment.id }}" >
+                    <button type="submit" class="btn btn-success">сформировать информацию о нем</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div style="padding-left: 20px;">
+                <h2>История перемещения: </h2>
+                {% for carrier in equipment.movement_history.all %}
+                 <p>
+                     Техника перемещена с: <b>{{ carrier.from_where }}</b>
+                     в <b>{{ carrier.where }}</b> работником <b>{{ carrier.who_moved }}</b>
+                     в <b>{{ carrier.created }}</b></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
